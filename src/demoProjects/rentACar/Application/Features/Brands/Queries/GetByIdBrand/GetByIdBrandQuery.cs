@@ -1,6 +1,6 @@
 ﻿using Application.Features.Brands.Dtos;
 using Application.Features.Brands.Models;
-using Application.Features.Brands.Queries.GetListBrand;
+using Application.Features.Brands.Queries.GetByIdBrand;
 using Application.Features.Brands.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
@@ -15,13 +15,13 @@ public class GetByIdBrandQuery:IRequest<BrandGetByIdDto>
 {
     public int Id { get; set; }
     
-    public class GetListBrandQueryHandler : IRequestHandler<GetByIdBrandQuery, BrandGetByIdDto>
+    public class GetByIdBrandQueryHandler : IRequestHandler<GetByIdBrandQuery, BrandGetByIdDto>
     {
         private readonly IBrandRepository _brandRepository;
         private readonly IMapper _mapper;
         private readonly BrandBusinessRules _brandBusinessRules;
 
-        public GetListBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
+        public GetByIdBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
         {
             _brandRepository = brandRepository;
             _mapper = mapper;

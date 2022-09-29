@@ -28,11 +28,12 @@ public class CreateProgrammingLanguageCommand : IRequest<CreatedProgrammingLangu
         {
 
             await _programmingLanguageBusinessRules.ProgrammingLanguageNameCanNotBeDuplicatedWhenInserted(request.Name);
+            await _programmingLanguageBusinessRules.ProgrammingLanguageNameCanNotEmpty(request.Name);
 
-            ProgrammingLanguage mappedBrand = _mapper.Map<ProgrammingLanguage>(request);
-            ProgrammingLanguage createdBrand = await _programmingLanguageRepository.AddAsync(mappedBrand);
-            CreatedProgrammingLanguageDto createdBrandDto = _mapper.Map<CreatedProgrammingLanguageDto>(createdBrand);
-            return createdBrandDto;
+            ProgrammingLanguage mappedProgrammingLanguage = _mapper.Map<ProgrammingLanguage>(request);
+            ProgrammingLanguage createdProgrammingLanguage = await _programmingLanguageRepository.AddAsync(mappedProgrammingLanguage);
+            CreatedProgrammingLanguageDto createdProgrammingLanguageDto = _mapper.Map<CreatedProgrammingLanguageDto>(createdProgrammingLanguage);
+            return createdProgrammingLanguageDto;
         }
     }
 }
