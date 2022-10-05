@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Auths\Commands\Register\" />
+    <Folder Include="Features\Auths\Rules\" />
     <Folder Include="Features\Brands\Constants\" />
     <Folder Include="Features\Brands\Models\" />
     <Folder Include="Features\Brands\Profiles\" />
@@ -19,6 +21,7 @@
     <Folder Include="Features\Models\Queries\GetListModelByDynamic\" />
     <Folder Include="Features\Models\Rules\" />
     <Folder Include="Features\Models\Profiles\" />
+    <Folder Include="Services\AuthService\" />
     <Folder Include="Services\Repositories\" />
   </ItemGroup>
 
